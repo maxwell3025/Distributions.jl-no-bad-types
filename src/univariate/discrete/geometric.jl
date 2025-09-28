@@ -141,7 +141,7 @@ cf(d::Geometric, t::Real) = laplace_transform(d, -t*im)
     if d.p == 1//2
         leading_zeros(rand(rng, UInt)) # This branch is a performance optimization
     else
-        floor(Int,-randexp(rng) / log1p(-d.p))
+        floor(-randexp(rng) / log1p(-d.p))
     end
 end
 
